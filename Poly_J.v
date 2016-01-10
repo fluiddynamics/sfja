@@ -446,7 +446,7 @@ Fixpoint filter {X:Type} (test: X->bool) (l:list X)
                         else       filter test t
   end.
 
-(** 例えば、この[filter]関数に述語として[evenb]と数値のリスト[l]を与えると、リスト[l]の要素の中で偶数の要素だけがリストとなって帰ります。 *)
+(** 例えば、この[filter]関数に述語として[evenb]と数値のリスト[l]を与えると、リスト[l]の要素の中で偶数の要素だけがリストとなって返ります。 *)
 
 Example test_filter1: filter evenb [1,2,3,4] = [2,4].
 Proof. reflexivity.  Qed.
@@ -1290,4 +1290,3 @@ End MumbleBaz.
 (* FILL IN HERE *)
 *)
 (** [] *)
-
