@@ -446,7 +446,7 @@ Fixpoint filter {X:Type} (test: X->bool) (l:list X)
                         else       filter test t
   end.
 
-(** 例えば、この[filter]関数に述語として[evenb]と数値のリスト[l]を与えると、リスト[l]の要素の中で偶数の要素だけがリストとなって返ります。 *)
+(** 例えば、この[filter]関数に述語として[evenb]と数値のリスト[l]を与えると、リスト[l]の要素の中で偶数の要素だけがリストとなって帰ります。 *)
 
 Example test_filter1: filter evenb [1,2,3,4] = [2,4].
 Proof. reflexivity.  Qed.
@@ -976,14 +976,14 @@ Proof.
 (** [] *)
 
 (** **** 練習問題: ★★★, recommended (combine_split) *)
-(*
+
 Theorem combine_split : forall X Y (l : list (X * Y)) l1 l2,
   split l = (l1, l2) ->
   combine l1 l2 = l.
 Proof.
   intros X Y l. induction l as [| [x y] l'].
   (* FILL IN HERE *) Admitted.
-*)
+
 (** [] *)
 
 (** **** 練習問題: ★★★, optional (split_combine) *)
@@ -1167,7 +1167,7 @@ Proof.
         帰納的に定義された型の値について、ケースごとに解析する
 
       - [induction... as...]:
-        機能的に定義された型の値に帰納法を適用する
+        帰納的に定義された型の値に帰納法を適用する
 
       - [inversion]:
         コンストラクタの単射性と独立性を利用して証明を行う
@@ -1211,7 +1211,7 @@ Definition fold_map {X Y:Type} (f : X -> Y) (l : list X) : list Y :=
 
 Module MumbleBaz.
 (** **** 練習問題: ★★, optional (mumble_grumble) *)
-(** つぎの、機能的に定義された二つの型をよく観察してください。 *)
+(** つぎの、帰納的に定義された二つの型をよく観察してください。 *)
 
 Inductive mumble : Type :=
   | a : mumble
